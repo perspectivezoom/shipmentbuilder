@@ -7,6 +7,9 @@ module.exports =
     open: false
     server:
       baseDir: [dev, '.']
+      middleware: (req, res, next) ->
+        req.url = '/index.html' if (/^[^\.]*$/.test(req.url)) # Matches everything that does not contain '.' (period). Used for clean URLs (eg '/login')
+        next()
   cjsx:
     src: "#{src}/scripts/**/*.{coffee,cjsx}"
     dest: "#{dev}/scripts"
