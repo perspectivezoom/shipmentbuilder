@@ -5,7 +5,7 @@ Home = React.createClass
   handleSubmit: (e) ->
     e.preventDefault()
     if inputValue = @refs.homeInput.getDOMNode().value
-      location.assign "/playlists/#{inputValue}"
+      location.assign "/#/playlists/#{inputValue}"
   render: ->
     div className: 'home flex-horizontal',
       div className: 'flex-item-fluid'
