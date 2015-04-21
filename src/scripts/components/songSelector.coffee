@@ -3,9 +3,10 @@
 `import Reflux from 'reflux'`
 `import Actions from '../actions'`
 `import SongSelectorAutocompleteStore from '../stores/songSelectorAutocompleteStore'`
-`import SongSelectorRow from './SongSelectorRow'`
+`import SongSelectorRow from './songSelectorRow'`
+`import SongSelectorBlankSlate from './songSelectorBlankSlate'`
 
-[songSelectorRow] = (React.createFactory(component) for component in [SongSelectorRow])
+[songSelectorRow, songSelectorBlankSlate] = (React.createFactory(component) for component in [SongSelectorRow, SongSelectorBlankSlate])
 {div, input} = React.DOM
 
 SongSelector = React.createClass
@@ -16,16 +17,17 @@ SongSelector = React.createClass
     ), 250
   
   render: ->
-    div {},
-      input type: 'text', ref: 'songSearchInput', onChange: @handleChange
-      if !@state.searchResult.loaded
-        div {}, "Loading"
-      else if @state.searchResult.songs.length
-        div {}, _.map @state.searchResult.songs, (song) ->
-          songSelectorRow {key: song.videoId, song}
-      else if @state.searchResult.searchTerm.length
-        div {}, "No search results"
-      else
-        div {}, "Search for songs above"
+    div className: "song-selector",
+      input type: 'text', ref: 'songSearchInput', onChange: @handleChange, className: "song-selector__input"
+      div {},
+        if !@state.searchResult.loaded
+          songSelectorBlankSlate message: "Loading..."
+        else if @state.searchResult.songs.length
+          _.map @state.searchResult.songs, (song) ->
+            songSelectorRow {key: song.videoId, song}
+        else if @state.searchResult.searchTerm.length
+          songSelectorBlankSlate message: "No search results"
+        else
+          songSelectorBlankSlate message: "Search for songs above"
 
 `export default SongSelector`

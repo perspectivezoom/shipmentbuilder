@@ -6,10 +6,13 @@ SongSelectorAutocompleteStore = Reflux.createStore
   listenables: [Actions]
   
   onSongSelectorAutocompleteSearch: (searchTerm) ->
-    @trigger (@state = {searchTerm, songs: [], loaded: false})
-    YoutubeService.search(searchTerm).then (songs) =>
-      @trigger (@state = {searchTerm, songs, loaded: true})
-  
+    if searchTerm
+      @trigger (@state = {searchTerm, songs: [], loaded: false})
+      YoutubeService.search(searchTerm).then (songs) =>
+        @trigger (@state = {searchTerm, songs, loaded: true})
+    else
+      @trigger (@state = {searchTerm, songs: [], loaded: true})
+
   getInitialState: ->
     @state = {searchTerm: "", songs: [], loaded: true}
 

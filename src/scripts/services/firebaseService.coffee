@@ -4,7 +4,7 @@
 
 class FirebaseService
   constructor: ->
-    @playlistsRef = new Firebase(config.firebase.rootUrl + 'playlists/')
+    @playlistsRef = new Firebase(config.firebase.rootUrl + '/playlists/')
   addSongToPlaylist: (playlistSlug, song) ->
     playlistEntryRef = @playlistsRef.child(playlistSlug).push()
     _.extend song, id: playlistEntryRef.key()

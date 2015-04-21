@@ -1,0 +1,16 @@
+@import '../variables/breakpoints'
+@import '../variables/layout'
+
+.container
+  width: 100vw
+  max-width: $container-max-width
+
+.primary-content
+  width: 60%
+  @media (max-width: $phone-tablet-breakpoint)
+    width: 100%
+
+.secondary-content
+  width: 40%
+  @media (max-width: $phone-tablet-breakpoint)
+    width: 100%
