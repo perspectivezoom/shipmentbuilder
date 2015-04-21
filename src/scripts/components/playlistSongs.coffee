@@ -10,7 +10,7 @@
 PlaylistSongs = React.createClass
   mixins: [Reflux.connect(PlaylistStore, "playlist")]
   render: ->
-    div className: 'playlist-songs', [
+    div className: 'playlist-songs',
       div className: 'playlist-songs__title', "Playlist #{@props.playlistSlug}"
       if !@state.playlist.loaded
         div className: 'playlist-songs__blank-slate', 'Loading...'
@@ -20,5 +20,5 @@ PlaylistSongs = React.createClass
         ).reverse()
       else
         div className: 'playlist-songs__blank-slate', 'No Songs in Playlist Yet'
-    ]
+          
 `export default PlaylistSongs`

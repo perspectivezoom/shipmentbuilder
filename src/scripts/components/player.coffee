@@ -54,6 +54,6 @@ Player = React.createClass
 
       else
         playerBlankSlate message: "No Songs"
-      playlistSongs {}
+      playlistSongs playlistSlug: @props.params.playlistSlug
 
 `export default Player`
