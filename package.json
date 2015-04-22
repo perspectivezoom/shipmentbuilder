@@ -43,7 +43,7 @@
       "react": "npm:react@0.12.2",
       "react-router": "npm:react-router@^0.12.4",
       "react-youtube": "npm:react-youtube@^3.0.0",
-      "reflux": "npm:reflux@^0.2.6"
+      "reflux": "npm:reflux@^0.2.7"
     }
   }
 }

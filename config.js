@@ -15,7 +15,7 @@ System.config({
     "react": "npm:react@0.12.2",
     "react-router": "npm:react-router@0.12.4",
     "react-youtube": "npm:react-youtube@3.0.0",
-    "reflux": "npm:reflux@0.2.6",
+    "reflux": "npm:reflux@0.2.7",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -335,6 +335,10 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:reflux@0.2.6": {
+      "eventemitter3": "npm:eventemitter3@0.1.6",
+      "native-promise-only": "npm:native-promise-only@0.7.6-a"
+    },
+    "npm:reflux@0.2.7": {
       "eventemitter3": "npm:eventemitter3@0.1.6",
       "native-promise-only": "npm:native-promise-only@0.7.6-a"
     },
