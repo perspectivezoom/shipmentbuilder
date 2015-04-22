@@ -4,6 +4,7 @@ Actions = Reflux.createActions [
   "songSelectorAutocompleteSearch"
   "playlistSlugChange"
   "playlistAddSong"
+  "playlistRemoveSong"
   "playerAdvanceSong"
 ]
 

@@ -3,10 +3,19 @@
 
 $playlist-songs-row-margin: $base-padding
 $bullet-margin-right: $base-padding
+$remove-icon-margin-right: $base-padding
+$remove-icon-hover-color: $error
 
 .playlist-songs-row
   margin: $playlist-songs-row-margin
   flex-wrap: nowrap
 
+  .playlist-songs-row__remove-icon
+    margin-right: $remove-icon-margin-right
+    cursor: pointer
+    &:hover
+      color: $remove-icon-hover-color
+
   .playlist-songs-row__bullet
     margin-right: $bullet-margin-right
+
