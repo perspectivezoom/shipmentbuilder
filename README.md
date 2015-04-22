@@ -1,14 +1,15 @@
-gulp-jspm-react-coffee-starter
-==============================
+karaokeplaylist
+===============
 
-A hand-rolled pipeline for front end projects using gulp, jspm, and coffeescript.
+A Collaborative Online YouTube Karaoke Room
+Demo at http://karaokeplaylist.net
 
 ## Usage
 
 ### Clone and Enter the Repo
 ```
-git clone git@github.com:perspectivezoom/gulp-jspm-react-coffee-starter.git
-cd gulp-jspm-starter
+git clone https://github.com/perspectivezoom/karaokeplaylist.git
+cd karaokeplaylist
 ```
 
 ### Install Dependencies
@@ -33,6 +34,8 @@ gulp prod
 Builds from `dev` into `prod`, minifying css, js, and images.
 
 ## Acknowledgements
+
+Built from [gulp-jspm-react-coffee-starter](https://github.com/perspectivezoom/gulp-jspm-react-coffee-starter)
 
 Large portions of this repo were more or less copied from:
 
