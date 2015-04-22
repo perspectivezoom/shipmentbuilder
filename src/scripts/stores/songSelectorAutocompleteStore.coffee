@@ -4,6 +4,9 @@
 
 SongSelectorAutocompleteStore = Reflux.createStore
   listenables: [Actions]
+
+  init: ->
+    @state = {searchTerm: "", songs: [], loaded: true}
   
   onSongSelectorAutocompleteSearch: (searchTerm) ->
     if searchTerm
@@ -13,7 +16,6 @@ SongSelectorAutocompleteStore = Reflux.createStore
     else
       @trigger (@state = {searchTerm, songs: [], loaded: true})
 
-  getInitialState: ->
-    @state = {searchTerm: "", songs: [], loaded: true}
+  getInitialState: -> @state
 
 `export default SongSelectorAutocompleteStore`

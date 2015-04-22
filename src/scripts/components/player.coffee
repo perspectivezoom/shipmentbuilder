@@ -41,19 +41,17 @@ Player = React.createClass
         iv_load_policy: 3
   
   render: ->
-    div {},
-      if !@state.player.loaded
-        playerBlankSlate message: "Loading..."
-      else if @state.player.currentSong
+    if !@state.player.loaded
+      playerBlankSlate message: "Loading..."
+    else if @state.player.currentSong
+      div {},
+        youtubePlayer @youtubePlayerOptions()
         div {},
-          youtubePlayer @youtubePlayerOptions()
-          div {},
-            button className: "button", onClick: @handleNextClick,
-              i className: "fa fa-forward"
-              text {}, "Next"
-
-      else
-        playerBlankSlate message: "No Songs"
-      playlistSongs playlistSlug: @props.params.playlistSlug
+          button className: "button", onClick: @handleNextClick,
+            i className: "fa fa-forward"
+            text {}, "Next"
+        playlistSongs playlistSlug: @props.params.playlistSlug
+    else
+      playerBlankSlate message: "No Songs"
 
 `export default Player`

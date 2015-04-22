@@ -7,6 +7,7 @@ PlayerStore = Reflux.createStore
   listenables: [Actions]
 
   init: ->
+    @state = {currentSong: null, loaded: false}
     @listenTo(PlaylistStore, @onPlaylistChange)
 
   getCurrentSong: ->
@@ -26,7 +27,6 @@ PlayerStore = Reflux.createStore
     localStorage.setItem "#{@playlist.slug}:lastPlayedEntryId", @state.currentSong.id
     @trigger (@state = {currentSong: @getCurrentSong(), loaded: @playlist.loaded})
 
-  getInitialState: ->
-    @state = {currentSong: null, loaded: false}
+  getInitialState: -> @state
 
 `export default PlayerStore`

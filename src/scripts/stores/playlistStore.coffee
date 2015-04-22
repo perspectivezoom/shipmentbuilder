@@ -5,6 +5,9 @@
 PlaylistStore = Reflux.createStore
   listenables: [Actions]
 
+  init: ->
+    @state = {songs: [], loaded: false, slug: @playlistSlug}
+
   onPlaylistAddSong: (song) ->
     FirebaseService.addSongToPlaylist @playlistSlug, song
 
@@ -13,7 +16,6 @@ PlaylistStore = Reflux.createStore
     FirebaseService.listenToPlaylist @playlistSlug, (songs) =>
       @trigger (@state = {songs, loaded: true, slug: @playlistSlug})
 
-  getInitialState: ->
-    @state = {songs: [], loaded: false, slug: @playlistSlug}
+  getInitialState: -> @state
 
 `export default PlaylistStore`
