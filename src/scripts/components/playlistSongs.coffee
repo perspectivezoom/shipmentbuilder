@@ -10,14 +10,15 @@
 PlaylistSongs = React.createClass
   mixins: [Reflux.connect(PlaylistStore, "playlist")]
   render: ->
+    songDivsArray = _.map @state.playlist.songs, (song, index) -> playlistSongsRow {song, index, key: song.id}
+    songDivsArray.reverse() if @props.order == 'desc'
+
     div className: 'playlist-songs',
       div className: 'playlist-songs__title', "Playlist #{@props.playlistSlug}"
       if !@state.playlist.loaded
         div className: 'playlist-songs__blank-slate', 'Loading...'
       else if @state.playlist.songs.length
-        div {}, _.map(@state.playlist.songs, (song, index) ->
-          playlistSongsRow {song, index, key: song.id}
-        ).reverse()
+        div {}, songDivsArray
       else
         div className: 'playlist-songs__blank-slate', 'No Songs in Playlist Yet'
           

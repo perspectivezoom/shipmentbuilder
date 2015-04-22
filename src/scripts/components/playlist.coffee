@@ -21,7 +21,7 @@ Playlist = React.createClass
         playlistDirections playlistSlug: @props.params.playlistSlug
         div className: "flex-horizontal",
           div className: "flex-item-fixed secondary-content",
-            playlistSongs playlistSlug: @props.params.playlistSlug
+            playlistSongs playlistSlug: @props.params.playlistSlug, order: 'desc'
           div className: "flex-item-fixed primary-content",
             songSelector {}
       div className: "flex-item-fluid"
