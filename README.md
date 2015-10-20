@@ -1,15 +1,14 @@
-karaokeplaylist
+shipmentbuilder
 ===============
 
-A Collaborative Online YouTube Karaoke Room
-Demo at http://karaokeplaylist.net
+We're building a directed graph, here, peoples
 
 ## Usage
 
 ### Clone and Enter the Repo
 ```
-git clone https://github.com/perspectivezoom/karaokeplaylist.git
-cd karaokeplaylist
+git clone https://github.com/perspectivezoom/shipmentbuilder.git
+cd shipmentbuilder
 ```
 
 ### Install Dependencies

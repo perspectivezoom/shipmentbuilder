@@ -4,11 +4,11 @@
 {div} = React.DOM
 [link] = (React.createFactory(component) for component in [ReactRouter.Link])
 
-PlaylistHeader = React.createClass
+ShipmentHeader = React.createClass
   render: ->
     div className: "header",
       div className: "header__bar flex-horizontal",
-        link to: "/", className: "flex-item-fixed header__logo", "Karaoke Playlist"
+        link to: "/", className: "flex-item-fixed header__logo", "Shipment Editor"
         div className: "flex-item-fluid"
 
-`export default PlaylistHeader`
+`export default ShipmentHeader`

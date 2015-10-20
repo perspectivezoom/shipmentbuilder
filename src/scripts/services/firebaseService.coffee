@@ -4,20 +4,13 @@
 
 class FirebaseService
   constructor: ->
-    @playlistsRef = new Firebase(config.firebase.rootUrl + '/playlists/')
+    @shipmentsRef = new Firebase(config.firebase.rootUrl + '/shipments/')
 
-  addSongToPlaylist: (playlistSlug, song) ->
-    playlistEntryRef = @playlistsRef.child(playlistSlug).push()
-    _.extend song, id: playlistEntryRef.key()
-    playlistEntryRef.set song
+  saveShipment: (shipmentSlug, shipment) ->
+    songRef = @shipmentsRef.child(shipmentSlug).set(shipment)
 
-  removeSongFromPlaylist: (playlistSlug, song) ->
-    songRef = @playlistsRef.child(playlistSlug).child(song.id)
-    songRef.remove()
-
-  listenToPlaylist: (playlistSlug, callback) ->
-    @playlistsRef.child(playlistSlug).on 'value', (snapshot) ->
-      entries = _.sortBy (snapshot.val() or {}), 'id'
-      callback(entries)
+  listenToShipment: (shipmentSlug, callback) ->
+    @shipmentsRef.child(shipmentSlug).on 'value', (snapshot) ->
+      callback(snapshot.val() or {})
 
 `export default new FirebaseService`

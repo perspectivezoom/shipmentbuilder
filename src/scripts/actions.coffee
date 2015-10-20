@@ -1,11 +1,10 @@
 `import Reflux from 'reflux'`
 
 Actions = Reflux.createActions [
-  "songSelectorAutocompleteSearch"
-  "playlistSlugChange"
-  "playlistAddSong"
-  "playlistRemoveSong"
-  "playerAdvanceSong"
+  "shipmentSlugChange"
+  "nodeSave"
+  "nodeDestroy"
+  "edgeUpdate"
 ]
 
 `export default Actions`
